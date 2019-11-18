@@ -7,6 +7,26 @@
 #include <stdio.h>
 
 /**
+ * exit_check - checks if first part of a string is "exit".
+ * @buf: the string to be read
+ * Return: -1 if exit, 1 otherwise
+ */
+int exit_check(char *buf)
+{
+	char exit[] = "exit";
+	int i;
+
+	for (i = 0; i < 4; i++)
+	{
+		if (buf[i] != exit[i])
+			return (1);
+	}
+	if (buf[4] == ' ' || buf[4] == 10)
+		return (0);
+	else
+		return (1);
+}
+/**
  * main - a simple shell
  * @ac: the number of arguments
  * @av: an array of strings taken in as arguments from the command line.
@@ -19,14 +39,14 @@ int main(int ac, char *av[], char *env[])
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, flag, status;
+	int i, j, flag, status;
 	pid_t kid_pid;
 
 	while (num_read != -1)
 	{
 		printf("KENTRAX $ ");
 		num_read = getline(&buffer, &n, stdin);
-		if (num_read == -1)
+		if (num_read == -1 || exit_check(buffer) == 0)
 			exit(99);
 		del_newline(buffer);
 		com[0] = strtok(buffer, &delim);
@@ -46,6 +66,7 @@ int main(int ac, char *av[], char *env[])
 		}
 		else
 			wait(&status);
+		
 	}
 	free(buffer);
 	return (0);
