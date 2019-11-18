@@ -11,11 +11,11 @@
  * @ac: the number of arguments
  * @av: an array of strings taken in as arguments from the command line.
  * @env: an array of strings, the environmental variables.
- * Return:
+ * Return: need to ammend.
  */
 int main(int ac, char *av[], char *env[])
 {
-	char *buffer, *com[32]; 
+	char *buffer, *com[32];
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
