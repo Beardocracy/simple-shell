@@ -45,7 +45,7 @@ int main(int ac, char *av[], char *env[])
 
 	while (num_read != -1)
 	{
-		printf("KENTRAX $ ");
+		print_prompt();
 		num_read = getline(&buffer, &n, stdin);
 		if (num_read == -1 || exit_check(buffer) == 0)
 			exit(99);
