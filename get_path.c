@@ -104,7 +104,7 @@ char *get_path(char *comm, char **env, int *ret_value)
 			if (access(comm, X_OK) == 0)
 				*ret_value = 1;
 		}
-		return (comm);
+		return (_strdup(comm));
 	}
 	paths_in = env_path_parse(env);
 	pathlist[0] = strtok(paths_in, &delim);
@@ -124,7 +124,7 @@ char *get_path(char *comm, char **env, int *ret_value)
 			acc_ret = access(cat_temp, F_OK | X_OK);
 			if (acc_ret == 0)
 				*ret_value = 1;
-/* */			free(paths_in);
+			free(paths_in);
 			return (cat_temp);
 		}
 		free(cat_temp);
