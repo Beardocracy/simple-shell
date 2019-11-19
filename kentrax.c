@@ -35,16 +35,16 @@ int exit_check(char *buf)
  */
 int main(int ac, char *av[], char *env[])
 {
-	char *buffer, *com[32];
+	char *buffer, *com[32], *com_path;
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, j, flag, status;
+	int i, flag, status, path_value;
 	pid_t kid_pid;
 
 	while (num_read != -1)
 	{
-		printf("KENTRAX $ ");
+		print_prompt();
 		num_read = getline(&buffer, &n, stdin);
 		if (num_read == -1 || exit_check(buffer) == 0)
 			exit(99);
@@ -56,17 +56,22 @@ int main(int ac, char *av[], char *env[])
 			if (com[i] == NULL)
 				flag = 0;
 		}
-		kid_pid = fork();
-		if (kid_pid == -1)
-			return (55);
-		if (kid_pid == 0)
+		com_path = get_path(com[0], env, &path_value);
+	/* Add bad command statements here, based on path_value */
+		if (path_value == 1)
 		{
-			execve(com[0], com, NULL);
-			exit(187);
+			kid_pid = fork();
+			if (kid_pid == -1)
+				return (55);
+			if (kid_pid == 0)
+			{
+				execve(com_path, com, NULL);
+				exit(187);
+			}
+			else
+				wait(&status);
 		}
-		else
-			wait(&status);
-		
+		free(com_path);
 	}
 	free(buffer);
 	return (0);
