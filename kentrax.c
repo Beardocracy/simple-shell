@@ -47,7 +47,7 @@ int main(int ac, char *av[], char *env[])
 		print_prompt();
 		num_read = getline(&buffer, &n, stdin);
 		if (num_read == -1 || exit_check(buffer) == 0)
-			exit(99);
+			break;
 		del_newline(buffer);
 		com[0] = strtok(buffer, &delim);
 		for (i = 1, flag = 1; flag; i++)
@@ -73,6 +73,7 @@ int main(int ac, char *av[], char *env[])
 		}
 		free(com_path);
 	}
-	free(buffer);
+	if (buffer)
+		free(buffer);
 	return (0);
 }
