@@ -10,5 +10,6 @@ char *env_path_parse(char **env);
 int _strlen(char *s);
 char *path_combo(char *dir, char *comm);
 void print_prompt(void);
+int print_string(char *s);
 
 #endif
