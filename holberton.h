@@ -12,5 +12,6 @@ char *path_combo(char *dir, char *comm);
 void print_prompt(void);
 int print_string(char *s);
 int _putchar(char c);
+void free_array(char **arr);
 
 #endif
