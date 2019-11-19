@@ -35,12 +35,11 @@ int exit_check(char *buf)
  */
 int main(int ac, char *av[], char *env[])
 {
-	char *buffer, *com[32];
-	char *com_path;
+	char *buffer, *com[32], *com_path;
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, j, flag, status, path_value;
+	int i, flag, status, path_value;
 	pid_t kid_pid;
 
 	while (num_read != -1)
@@ -67,12 +66,12 @@ int main(int ac, char *av[], char *env[])
 			if (kid_pid == 0)
 			{
 				execve(com_path, com, NULL);
-				printf("-hsh: %s: No such file or directory\n", com[0]);
 				exit(187);
 			}
 			else
 				wait(&status);
 		}
+		free(com_path);
 	}
 	free(buffer);
 	return (0);

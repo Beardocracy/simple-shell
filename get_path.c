@@ -80,12 +80,12 @@ char *env_path_parse(char **env)
  * @comm: the command string
  * @env: the environment variables, in an array of strings.
  * @ret_value: int pointer to be changed depending on conditions.
- * Return: the absolute path to the command, if it exists. 
- * 	If no file exists, return bad command.
+ * Return: the absolute path to the command, if it exists.
+ * If no file exists, return bad command.
  * Description:	ret_value will return...
- * 	1 if path exists and permission is ok
- * 	0 if path exists and no permission allowed
- * 	-1 if no path exists (command not found)
+ * 1 if path exists and permission is ok
+ * 0 if path exists and no permission allowed
+ * -1 if no path exists (command not found)
  */
 char *get_path(char *comm, char **env, int *ret_value)
 {
@@ -99,7 +99,7 @@ char *get_path(char *comm, char **env, int *ret_value)
 	if (comm[0] == '/' || comm[0] == '.')
 	{
 		if (access(comm, F_OK) == 0)
-		{	
+		{
 			*ret_value = 0;
 			if (access(comm, X_OK) == 0)
 				*ret_value = 1;

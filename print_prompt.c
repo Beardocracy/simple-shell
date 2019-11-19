@@ -1,6 +1,17 @@
 #include "holberton.h"
 
 /**
+ * _putchar - prints a character to std out.
+ * @c: the character to be printed.
+ * Return: 1 if successful, 0 if not.
+ */
+int _putchar(char c)
+{
+	return(write(STDOUT_FILENO, &c, 1));
+}
+
+
+/**
  * print_prompt - prints the command line prompt.
  */
 void print_prompt(void)
