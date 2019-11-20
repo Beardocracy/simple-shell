@@ -121,7 +121,7 @@ char *get_path(char *comm, char **env, int *ret_value)
 		if (acc_ret == 0)
 		{
 			*ret_value = 0;
-			acc_ret = access(cat_temp, F_OK | X_OK);
+			acc_ret = access(cat_temp, X_OK);
 			if (acc_ret == 0)
 				*ret_value = 1;
 			free(paths_in);
