@@ -57,21 +57,10 @@ int main(int ac, char *av[], char *env[])
 				flag = 0;
 		}
 		com_path = get_path(com[0], env, &path_value);
-	/* Add bad command statements here, based on path_value */
-		if (path_value == 1)
-		{
-			kid_pid = fork();
-			if (kid_pid == -1)
-				return (55);
-			if (kid_pid == 0)
-			{
-				execve(com_path, com, NULL);
-				exit(187);
-			}
-			else
-				wait(&status);
-		}
-		free(com_path);
+		switcher(path_value, com_path, com, env);
+/*		if (path_value == 1)
+			executer(com_path, com);
+*/		free(com_path);
 	}
 	if (buffer)
 		free(buffer);
