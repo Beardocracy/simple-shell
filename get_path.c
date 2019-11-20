@@ -95,14 +95,14 @@ char *get_path(char *comm, char **env, int *ret_value)
 	char *cat_temp;
 	char delim = ':';
 
-	*ret_value = -1;
+	*ret_value = 2;
 	if (comm[0] == '/' || comm[0] == '.')
 	{
 		if (access(comm, F_OK) == 0)
 		{
-			*ret_value = 0;
+			*ret_value = 1;
 			if (access(comm, X_OK) == 0)
-				*ret_value = 1;
+				*ret_value = 3;
 		}
 		return (_strdup(comm));
 	}
@@ -120,10 +120,10 @@ char *get_path(char *comm, char **env, int *ret_value)
 		acc_ret = access(cat_temp, F_OK);
 		if (acc_ret == 0)
 		{
-			*ret_value = 0;
+			*ret_value = 1;
 			acc_ret = access(cat_temp, X_OK);
 			if (acc_ret == 0)
-				*ret_value = 1;
+				*ret_value = 3;
 			free(paths_in);
 			return (cat_temp);
 		}
