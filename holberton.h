@@ -22,5 +22,7 @@ int perror_permission(char *file, char *caller);
 int perror_file(char *file, char *caller);
 int perror_command(char *command);
 int built_ins_abs_paths_check(char *com);
+void exit_status(char *path, char **commands);
+int _atoi(char *s);
 
 #endif
