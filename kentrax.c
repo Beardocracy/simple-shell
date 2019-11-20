@@ -39,8 +39,7 @@ int main(int ac, char *av[], char *env[])
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, flag, status, path_value;
-	pid_t kid_pid;
+	int i, flag, path_value;
 
 	while (num_read != -1)
 	{
@@ -57,20 +56,7 @@ int main(int ac, char *av[], char *env[])
 				flag = 0;
 		}
 		com_path = get_path(com[0], env, &path_value);
-	/* Add bad command statements here, based on path_value */
-		if (path_value == 1)
-		{
-			kid_pid = fork();
-			if (kid_pid == -1)
-				return (55);
-			if (kid_pid == 0)
-			{
-				execve(com_path, com, NULL);
-				exit(187);
-			}
-			else
-				wait(&status);
-		}
+		switcher(path_value, com_path, com, env, av);
 		free(com_path);
 	}
 	if (buffer)

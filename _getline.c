@@ -38,3 +38,41 @@ char *_strdup(char *s)
 
 	return (dup);
 }
+
+/**
+ * _strcmp - compares two strings
+ * @sea: string one
+ * @bass: string two
+ * Return: 1 if they are the same. 0 if they are not.
+ */
+int _strcmp(char *sea, char *bass)
+{
+	int i = 0;
+
+	if (!sea || !bass)
+		return (0);
+	while (sea[i] && bass[i])
+	{
+		if (sea[i] != bass[i])
+			return (0);
+		i++;
+	}
+	if (sea[i] == '\0' && bass[i] == '\0')
+		return (1);
+
+	return (0);
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: the string
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
+}

@@ -14,5 +14,13 @@ int print_string(char *s);
 int _putchar(char c);
 void free_array(char **arr);
 char *_strdup(char *s);
+int executer(char *command, char **flags);
+int switcher(int val, char *com_path, char **flags, char **env, char **av);
+int _strcmp(char *sea, char *bass);
+int ptr_array_print(char **arr);
+int perror_permission(char *file, char *caller);
+int perror_file(char *file, char *caller);
+int perror_command(char *command);
+int built_ins_abs_paths_check(char *com);
 
 #endif
