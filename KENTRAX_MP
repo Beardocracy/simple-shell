@@ -1,0 +1,18 @@
+./"This is the manpage of the KENTRAX Shell
+.TH KENTRAX "11-19-2019" "V1.0" "KENTRAX man page"
+
+.SH NAME
+KENTRAX
+
+.SH DESCRIPTION
+KENTRAX is a shell variation that will allow you to do similar function as -Bash
+Shell.This shell can work on any operating system or computer.
+
+.SH SYSTEM CALLS
+
+.SH FUNCTIONS
+
+.SH SYNOPSIS
+
+.SH AUTHORS
+Travis Bearden and Kenneth Fernandez.
