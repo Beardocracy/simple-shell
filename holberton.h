@@ -17,5 +17,6 @@ char *_strdup(char *s);
 int executer(char *command, char **flags);
 int switcher(int val, char *com_path, char **flags, char **env);
 int _strcmp(char *sea, char *bass);
+int ptr_array_print(char **arr);
 
 #endif
