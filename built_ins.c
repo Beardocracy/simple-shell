@@ -33,7 +33,7 @@ void exit_status(char *path, char **commands)
 		status = _atoi(commands[1]);
 		free(commands[0]);
 	}
-	if (path)
+	if (path != NULL)
 		free(path);
 	exit(status);
 }

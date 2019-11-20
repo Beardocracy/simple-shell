@@ -23,10 +23,11 @@ int main(int ac, char *av[], char *env[])
 
 	while (num_read != -1)
 	{
-		print_prompt();
+		if (isatty(STDIN_FILENO))
+			print_prompt();
 		num_read = getline(&buffer, &n, stdin);
 		if (num_read == -1)
-			exit_status(com_path, &buffer);
+			break;
 		del_newline(buffer);
 		com[0] = strtok(buffer, &delim);
 		for (i = 1, flag = 1; flag; i++)
