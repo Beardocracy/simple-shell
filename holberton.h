@@ -14,5 +14,6 @@ int print_string(char *s);
 int _putchar(char c);
 void free_array(char **arr);
 char *_strdup(char *s);
+void env(void);
 
 #endif
