@@ -4,19 +4,6 @@
 #include <string.h>
 #include <unistd.h>
 
-/**
- * _strlen - returns the length of a string
- * @s: the string
- * Return: the length of the string
- */
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; s[i]; i++)
-		;
-	return (i);
-}
 
 /**
  * path_combo - combines 2 strings, with a / in between them.
@@ -95,39 +82,63 @@ char *get_path(char *comm, char **env, int *ret_value)
 	char *cat_temp;
 	char delim = ':';
 
-	*ret_value = 2;
-	if (comm[0] == '/' || comm[0] == '.')
+	*ret_value = built_ins_abs_paths_check(comm);
+	if (*ret_value == 2)
 	{
-		if (access(comm, F_OK) == 0)
+		paths_in = env_path_parse(env);
+		pathlist[0] = strtok(paths_in, &delim);
+		for (i = 1, flag = 1; flag; i++)
 		{
-			*ret_value = 1;
-			if (access(comm, X_OK) == 0)
-				*ret_value = 3;
+			pathlist[i] = strtok(NULL, &delim);
+			if (pathlist[i] == NULL)
+				flag = 0;
 		}
-		return (_strdup(comm));
-	}
-	paths_in = env_path_parse(env);
-	pathlist[0] = strtok(paths_in, &delim);
-	for (i = 1, flag = 1; flag; i++)
-	{
-		pathlist[i] = strtok(NULL, &delim);
-		if (pathlist[i] == NULL)
-			flag = 0;
-	}
-	for (i = 0; pathlist[i]; i++)
-	{
-		cat_temp = path_combo(pathlist[i], comm);
-		acc_ret = access(cat_temp, F_OK);
-		if (acc_ret == 0)
+		for (i = 0; pathlist[i]; i++)
 		{
-			*ret_value = 1;
-			acc_ret = access(cat_temp, X_OK);
+			cat_temp = path_combo(pathlist[i], comm);
+			acc_ret = access(cat_temp, F_OK);
 			if (acc_ret == 0)
-				*ret_value = 3;
-			free(paths_in);
-			return (cat_temp);
+			{
+				*ret_value = 1;
+				acc_ret = access(cat_temp, X_OK);
+				if (acc_ret == 0)
+					*ret_value = 3;
+				free(paths_in);
+				return (cat_temp);
+			}
+			free(cat_temp);
 		}
-		free(cat_temp);
 	}
-	return (comm);
+	return (_strdup(comm));
+}
+	
+/**
+ * built_ins_abs_paths_check - checks the initial command
+ * @com: the command to check
+ * Return: See lines below.
+ * 0 if is path, but no file found. 
+ * 1 if file found, but no permission.
+ * 2 if command not found (search path).
+ * 3 if found and permission is granted.
+ * 4 if command matches 'env'.
+ */
+int built_ins_abs_paths_check(char *com)
+{
+	int ret_value = 2;
+
+	if (com[0] == '/' || com[0] == '.')
+	{
+		if (access(com, F_OK) == 0)
+		{
+			ret_value = 1;
+			if (access(com, X_OK) == 0)
+				ret_value = 3;
+		}
+	}
+	else
+	{
+		if (_strcmp("env", com))
+			return (4);
+	}
+	return (ret_value);
 }
