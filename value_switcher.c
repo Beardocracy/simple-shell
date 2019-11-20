@@ -10,13 +10,23 @@
  * @com_path: string that contains either a absolute path or other command.
  * @flags: the rest of what was accepted from getline
  * @env: a copy of the environment variables
+ * @av: a copy of the argument taken in from the command line at launch
  * Return: 0 if successful
  */
-int switcher(int val, char *com_path, char **flags, char **env)
+int switcher(int val, char *com_path, char **flags, char **env, char **av)
 {
 	switch(val) {
 
+		case 0 :
+			perror_file(com_path, av[0]);
+			return (0);
 		case 1 :
+			perror_permission(com_path, av[0]);
+			return (0);
+		case 2 :
+			perror_command(com_path);
+			return (0);
+		case 3 :
 			executer(com_path, flags);
 			return (0);
 	}
