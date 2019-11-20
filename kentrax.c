@@ -57,7 +57,7 @@ int main(int ac, char *av[], char *env[])
 				flag = 0;
 		}
 		com_path = get_path(com[0], env, &path_value);
-		switcher(path_value, com_path, com, env);
+		switcher(path_value, com_path, com, env, av);
 /*		if (path_value == 1)
 			executer(com_path, com);
 */		free(com_path);
