@@ -25,7 +25,6 @@ int perror_permission(char *file, char *caller)
  */
 int perror_file(char *file, char *caller)
 {
-	
 	_putchar('-');
 	print_string(caller);
 	print_string(": ");
@@ -43,4 +42,6 @@ int perror_command(char *command)
 {
 	print_string(command);
 	print_string(": command not found\n");
+
+	return (0);
 }

@@ -111,12 +111,12 @@ char *get_path(char *comm, char **env, int *ret_value)
 	}
 	return (_strdup(comm));
 }
-	
+
 /**
  * built_ins_abs_paths_check - checks the initial command
  * @com: the command to check
  * Return: See lines below.
- * 0 if is path, but no file found. 
+ * 0 if is path, but no file found.
  * 1 if file found, but no permission.
  * 2 if command not found (search path).
  * 3 if found and permission is granted.

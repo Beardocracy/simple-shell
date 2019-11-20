@@ -7,7 +7,7 @@
  */
 int ptr_array_print(char **arr)
 {
-	int i, j;
+	int i;
 
 	for (i = 0; arr[i]; i++)
 	{

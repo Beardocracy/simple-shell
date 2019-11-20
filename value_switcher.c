@@ -15,30 +15,30 @@
  */
 int switcher(int val, char *com_path, char **flags, char **env, char **av)
 {
-	switch(val) {
-
-		case 0 :
-			perror_file(com_path, av[0]);
-			return (0);
-		case 1 :
-			perror_permission(com_path, av[0]);
-			return (0);
-		case 2 :
-			perror_command(com_path);
-			return (0);
-		case 3 :
-			executer(com_path, flags);
-			return (0);
-		case 4 :
-			ptr_array_print(env);
-			return (0);
+	switch (val)
+	{
+	case 0:
+		perror_file(com_path, av[0]);
+		return (0);
+	case 1:
+		perror_permission(com_path, av[0]);
+		return (0);
+	case 2:
+		perror_command(com_path);
+		return (0);
+	case 3:
+		executer(com_path, flags);
+		return (0);
+	case 4:
+		ptr_array_print(env);
+		return (0);
 	}
 	return (1);
 }
 /**
  * executer - forks current process to run execve
- * @command - the absolute path of an executable
- * @flags - an array of strings, including extra input for the command
+ * @command: the absolute path of an executable
+ * @flags: an array of strings, including extra input for the command
  * Return: 0 if successful, -1 if not
  */
 int executer(char *command, char **flags)

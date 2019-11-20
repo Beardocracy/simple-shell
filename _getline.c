@@ -51,13 +51,12 @@ int _strcmp(char *sea, char *bass)
 
 	if (!sea || !bass)
 		return (0);
-	else
-		while (sea[i] && bass[i])
-		{
-			if (sea[i] != bass[i])
-				return (0);
-			i++;
-		}
+	while (sea[i] && bass[i])
+	{
+		if (sea[i] != bass[i])
+			return (0);
+		i++;
+	}
 	if (sea[i] == '\0' && bass[i] == '\0')
 		return (1);
 

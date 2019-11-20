@@ -39,8 +39,7 @@ int main(int ac, char *av[], char *env[])
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, flag, status, path_value;
-	pid_t kid_pid;
+	int i, flag, path_value;
 
 	while (num_read != -1)
 	{
@@ -58,9 +57,7 @@ int main(int ac, char *av[], char *env[])
 		}
 		com_path = get_path(com[0], env, &path_value);
 		switcher(path_value, com_path, com, env, av);
-/*		if (path_value == 1)
-			executer(com_path, com);
-*/		free(com_path);
+		free(com_path);
 	}
 	if (buffer)
 		free(buffer);
