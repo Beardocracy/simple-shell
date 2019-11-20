@@ -14,6 +14,8 @@ int print_string(char *s);
 int _putchar(char c);
 void free_array(char **arr);
 char *_strdup(char *s);
-void env(void);
+int executer(char *command, char **flags);
+int switcher(int val, char *com_path, char **flags, char **env);
+int _strcmp(char *sea, char *bass);
 
 #endif
