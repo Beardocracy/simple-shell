@@ -29,6 +29,9 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av)
 		case 3 :
 			executer(com_path, flags);
 			return (0);
+		case 4 :
+			ptr_array_print(env);
+			return (0);
 	}
 	return (1);
 }
