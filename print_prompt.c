@@ -52,6 +52,8 @@ int _atoi(char *s)
 	int sum = 0;
 	int pos_neg = 1;
 
+	if (s == NULL)
+		return (0);
 	end = _strlen(s);
 	for (i = 0; i < end; i++)
 	{
