@@ -25,11 +25,10 @@ int perror_permission(char *file, char *caller)
  */
 int perror_file(char *file, char *caller)
 {
-	_putchar('-');
 	print_string(caller);
 	print_string(": ");
 	print_string(file);
-	print_string(": No such file or directory\n");
+	print_string(": not found\n");
 	return (0);
 }
 
