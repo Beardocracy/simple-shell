@@ -6,13 +6,13 @@ KENTRAX
 
 .SH DESCRIPTION
 KENTRAX is a shell variation that will allow you to do similar function as -Bash
-Shell.This shell can work on any operating system or computer.
+Shell. This shell can work on any operating system or computer.
+
+.SH SYNOPSIS
 
 .SH SYSTEM CALLS
 
 .SH FUNCTIONS
-
-.SH SYNOPSIS
 
 .SH AUTHORS
 Travis Bearden and Kenneth Fernandez.
