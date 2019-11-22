@@ -37,10 +37,10 @@ int main(int ac, char *av[], char *env[])
 		del_newline(buffer);
 		if (buffer[0])
 		{
-			com[0] = strtok(buffer, &delim);
+			com[0] = _strtok(buffer, &delim);
 			for (i = 1, flag = 1; flag; i++)
 			{
-				com[i] = strtok(NULL, &delim);
+				com[i] = _strtok(NULL, &delim);
 				if (com[i] == NULL)
 					flag = 0;
 			}

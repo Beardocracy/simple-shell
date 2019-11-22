@@ -86,10 +86,10 @@ char *get_path(char *comm, char **env, int *ret_value)
 	if (*ret_value == 2)
 	{
 		paths_in = env_path_parse(env);
-		pathlist[0] = strtok(paths_in, &delim);
+		pathlist[0] = _strtok(paths_in, &delim);
 		for (i = 1, flag = 1; flag; i++)
 		{
-			pathlist[i] = strtok(NULL, &delim);
+			pathlist[i] = _strtok(NULL, &delim);
 			if (pathlist[i] == NULL)
 				flag = 0;
 		}

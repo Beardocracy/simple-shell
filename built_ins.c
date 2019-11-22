@@ -23,14 +23,23 @@ int ptr_array_print(char **arr)
  * exit_status - exits the program with specific exit status and frees mallocs.
  * @path: string containing the exit command
  * @commands: array of strings containing the rest of the command line
+ * @caller: name of the executable program, aka the shell.
  */
-void exit_status(char *path, char **commands)
+void exit_status(char *path, char **commands, char *caller)
 {
 	int status = 0;
 
 	if (commands[1] != NULL)
 	{
 		status = _atoi(commands[1]);
+		if (status < 0)
+		{
+			print_string(caller);
+			print_string(": 1: exit: Illegal number: ");
+			print_string(commands[1]);
+			_putchar('\n');
+			return;
+		}
 		free(commands[0]);
 	}
 	if (path != NULL)

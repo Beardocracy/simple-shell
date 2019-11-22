@@ -50,16 +50,18 @@ int _atoi(char *s)
 {
 	int i, end;
 	int sum = 0;
-	int pos_neg = 1;
 
 	if (s == NULL)
 		return (0);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (-1);
+	}
 	end = _strlen(s);
 	for (i = 0; i < end; i++)
 	{
-		if (s[i] == '-')
-			pos_neg = -pos_neg;
-		else if (s[i] >= '0' && s[i] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			sum = s[i] - '0';
 			while (s[i + 1] >= '0' && s[i + 1] <= '9')
@@ -73,7 +75,6 @@ int _atoi(char *s)
 			i = end;
 		}
 	}
-	sum *= pos_neg;
 	return (sum);
 
 }
