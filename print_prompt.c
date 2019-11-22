@@ -72,6 +72,8 @@ int _atoi(char *s)
 			}
 			i = end;
 		}
+		if (s[i] < '0' || s[i] > '9');
+			return (-1);
 	}
 	sum *= pos_neg;
 	return (sum);

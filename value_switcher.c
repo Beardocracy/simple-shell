@@ -33,7 +33,7 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av)
 		ptr_array_print(env);
 		return (0);
 	case 5:
-		exit_status(com_path, flags);
+		exit_status(com_path, flags, av[0]);
 		return (0);
 	}
 	return (1);
