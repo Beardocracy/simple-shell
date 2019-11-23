@@ -26,7 +26,7 @@ int main(int ac, char *av[], char *env[])
 	sighandler_t ignore;
 
 	if (signal(SIGINT, SIG_IGN) != SIG_IGN)
-	    signal(SIGINT, ignore);
+		signal(SIGINT, ignore);
 	while (num_read != -1)
 	{
 		if (isatty(STDIN_FILENO))

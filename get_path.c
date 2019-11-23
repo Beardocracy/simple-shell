@@ -76,19 +76,23 @@ char *env_path_parse(char **env)
  */
 char *get_path(char *comm, char **env, int *ret_value)
 {
-	int i, flag, acc_ret;
-	char *pathlist[16];
-	char *paths_in;
-	char *cat_temp;
-	char delim = ':';
+	int i = 0, flag, acc_ret, cur_dir_index;
+	char *pathlist[32], *paths_in, *cat_temp, delim = ':';
 
 	*ret_value = built_ins_abs_paths_check(comm);
 	if (*ret_value == 2)
 	{
 		paths_in = env_path_parse(env);
-		pathlist[0] = _strtok(paths_in, &delim);
-		for (i = 1, flag = 1; flag; i++)
+		cur_dir_index = colon_check(paths_in);
+		if (cur_dir_index > -1)
+			pathlist[cur_dir_index] = "./";
+		if (i == cur_dir_index)
+			i++;
+		pathlist[i] = _strtok(paths_in, &delim);
+		for (i++, flag = 1; flag; i++)
 		{
+			if (i == cur_dir_index)
+				i++;
 			pathlist[i] = _strtok(NULL, &delim);
 			if (pathlist[i] == NULL)
 				flag = 0;
@@ -155,4 +159,31 @@ int built_ins_abs_paths_check(char *com)
 
 	}
 	return (ret_value);
+}
+
+/**
+ * colon_check - checks a string for leading, appending, or back to back ':'.
+ * @s: the string to be checked.
+ * Return: -1 if no leading, ending, or double colons are present.
+ * Otherwise, returns the corresponding index where the colon appears.
+ */
+int colon_check(char *s)
+{
+	int i = 0, count = 0;
+
+	if (s[0] == ':')
+		return (0);
+	while (s[i] != '\0')
+	{
+		if (s[i] == ':')
+		{
+			count++;
+			i++;
+			if (s[i] == ':' || s[i] == '\0')
+				return (count);
+		}
+		i++;
+	}
+
+	return (-1);
 }
