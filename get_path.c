@@ -77,10 +77,7 @@ char *env_path_parse(char **env)
 char *get_path(char *comm, char **env, int *ret_value)
 {
 	int i = 0, flag, acc_ret, cur_dir_index;
-	char *pathlist[32];
-	char *paths_in;
-	char *cat_temp;
-	char delim = ':';
+	char *pathlist[32], *paths_in, *cat_temp, delim = ':';
 
 	*ret_value = built_ins_abs_paths_check(comm);
 	if (*ret_value == 2)
