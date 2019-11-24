@@ -1,6 +1,6 @@
-# Simple-Shell
+# Simple_Shell
 
-Our Simple-Shell is able to 
+Our Simple_Shell is able to 
 
 ## Getting Started
 
@@ -20,7 +20,9 @@ Our Simple-Shell is able to
 | _strcmp | Custom built function that compares two strings. |
 | _strlen | Custom built function that returns the length of a string |
 | path_combo | This function combines two strings with a / symbol in between them. After, they have been combined and malloced, it is returns a pointer.|
-| env_path_parse | this function parses the pathline from the environment variable. After the memory is allocated for the array of strings, it returns the environment variable line. |
+| env_path_parse | This function parses the pathline from the environment variable. After the memory is allocated for the array of strings, it returns the environment variable line. |
+| free_if_needed | This function frees the allocated memory of a pointer if it is not null. |
+| free_array | This function frees the string in a pointer array. |
 
 
 ```
