@@ -7,7 +7,7 @@ Our Simple_Shell is able to
 
 ### Functions
 
-| Type  | Output |
+| Type  | Description |
 |:-----:|:------:|
 | _strtok() | This function takes a string and seperates it into tokens by putting a null terminator where the specified delimiter is located. |
 | _getenv | |
@@ -28,6 +28,13 @@ Our Simple_Shell is able to
 ```
 Give examples
 ```
+
+### Built-ins
+
+| Type  | Description |
+|:-----:|:------:|
+| ptr_array_print | This built-in prints an array of strings. the array of string contain the variables. This returns the number of strings printed. |
+| exit_status | exits the program with specific exit statys and frees the allocated memory. |
 
 ### Compilation
 
