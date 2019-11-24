@@ -9,8 +9,7 @@ Our Simple-Shell is able to
 
 | Type  | Output |
 |:-----:|:------:|
-| _strtok | This function takes a string and seperates it into tokens by putting
-   a null terminator where the specified delimiter is located |
+| _strtok | This function takes a string and seperates it into tokens by putting a null terminator where the specified delimiter is located |
 | _getenv | |
 | access |  |
 | free |  |
