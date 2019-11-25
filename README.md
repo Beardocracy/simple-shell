@@ -23,6 +23,8 @@ Our Simple_Shell is able to
 | env_path_parse | This function parses the pathline from the environment variable. After the memory is allocated for the array of strings, it returns the environment variable line. |
 | free_if_needed | This function frees the allocated memory of a pointer if it is not null. |
 | free_array | This function frees the string in a pointer array. |
+| get_path |  This function returns the absolute path to a command. |
+| built_ins_abs_paths_check | Checks the initial command. |
 
 
 ```
