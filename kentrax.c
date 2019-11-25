@@ -50,6 +50,7 @@ int main(int ac, char *av[], char *env[])
 			com_path = get_path(com[0], env, &path_value);
 			switcher(path_value, com_path, com, env, av, com_count);
 			free(com_path);
+			free(buffer);
 		}
 	}
 	free(buffer);
