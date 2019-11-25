@@ -62,13 +62,4 @@ hsh main.c shell.c
 ($) exit
 $
 ```
-
-### And coding style tests
-
-```
-Give an example
-```
-
-## Built With
-
 ## Contributing
