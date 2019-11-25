@@ -78,3 +78,22 @@ int _atoi(char *s)
 	return (sum);
 
 }
+
+
+/**
+ * perror_string - prints a string to the standard error.
+ * @s: the string to be printed.
+ * Return: the number of char printed.
+ */
+int perror_string(char *s)
+{
+	int i, j;
+
+	if (s == NULL)
+		return (0);
+
+	for (i = 0; s[i]; i++)
+		j += write(STDERR_FILENO, &s[i], 1);
+
+	return (j);
+}

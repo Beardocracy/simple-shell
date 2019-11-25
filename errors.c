@@ -34,13 +34,16 @@ int perror_file(char *file, char *caller)
 
 /**
  * perror_command - prints the command not found error message
+ * @caller: the name of the shell's executable
  * @command: the command
  * Return: 0
  */
-int perror_command(char *command)
+int perror_command(char *caller, char *command)
 {
-	print_string(command);
-	print_string(": command not found\n");
+	(void) command;
+
+	perror_string(caller);
+	perror_string(": No such file or directory\n");
 
 	return (0);
 }
