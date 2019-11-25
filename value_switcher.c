@@ -13,18 +13,18 @@
  * @av: a copy of the argument taken in from the command line at launch
  * Return: 0 if successful
  */
-int switcher(int val, char *com_path, char **flags, char **env, char **av)
+int switcher(int val, char *com_path, char **flags, char **env, char **av, int com_count)
 {
 	switch (val)
 	{
 	case 0:
-		perror_command(av[0], com_path);
+		perror_command(av[0], com_path, com_count);
 		return (0);
 	case 1:
-		perror_permission(com_path, av[0]);
+		perror_permission(com_path, av[0], com_count);
 		return (0);
 	case 2:
-		perror_command(av[0], com_path);
+		perror_command(av[0], com_path, com_count);
 		return (0);
 	case 3:
 		executer(com_path, flags);
