@@ -1,6 +1,6 @@
 # Simple_Shell
 
-Our Simple_Shell is able to 
+Our Simple_Shell is an awesome entry way into the world of computers. This shell can work on any operating system or computer.
 
 ## Getting Started
 
@@ -26,6 +26,10 @@ Our Simple_Shell is able to
 | get_path |  This function returns the absolute path to a command. |
 | built_ins_abs_paths_check | Checks the initial command. |
 | executer | This function was build to make sure that execve kills any child process. Travis decided to put exit(187) as a safety measure. |
+| _putchar | This function allows you to print a character to standard out(stdout). |
+| print_prompt | This function prints the command line prompt. |
+| print_string | This lets you print a string ended with a null terminator. |
+| _atoi | this function helps convert a string to an integer. |
 
 
 ### Error message
