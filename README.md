@@ -54,7 +54,7 @@ The prerequisites to create this shell project would either be 1 year of college
 
 ### Switch cases
 
-|Name | output|
+|Name | Output|
 |:-----:|:------:|
 | case 0 | perror_command(av[0], com_path); |
 | case 1 | perror_permission(com_path, av[0]); |
