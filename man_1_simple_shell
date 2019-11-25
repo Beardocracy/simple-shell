@@ -6,8 +6,8 @@ KENTRAX \- Simple-shell project.
 
 .SH DESCRIPTION
 
-KENTRAX is a shell variation that will allow you to do similar function as Bash. 
-This shell can work on any operating system or computer.
+.B KENTRAX
+is a shell variation that will allow you to do similar function as Bash. This shell can work on any operating system or computer.this is the base of the simple shell program. It is made up of a few functions and built-ins. Signal is to block our control c (advance problem). del_newline is to delete the newline that is given by the getline. _strtok is being used to dissect the path from the environment to call different commands.
 
 .SH SYNOPSIS
 
@@ -17,21 +17,28 @@ This shell can work on any operating system or computer.
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
+.SH Copyright
+
+KENTRAX is Copyright 2019 by Holberton School.
+
 .SH FUNCTIONS
 
-del_newline \- Deletes the last newline from the getline function.
+.B del_newline
+ Deletes the last newline from the getline function.
 
-_atoi \- Custom built atoi changes a character to an integer.
+.B _atoi
+Custom built atoi changes a character to an integer.
 
-_strcmp \- Custom built strcmp that compares two strings.
+.B _strcmp
+Custom built strcmp that compares two strings.
 
-_putchar \- Custom build putchar that allows your to write a single character to 
-	 an output stream.
+.B _putchar
+Custom build putchar that allows your to write a single character to an output stream.
 
-exit_check \-
+.B comments
+please check readme for the other functions.
 
 .SH COMMENTS
-
 
 .SH AUTHORS
 Travis Bearden and Kenneth Fernandez.
