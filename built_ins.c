@@ -26,10 +26,11 @@ int ptr_array_print(char **arr)
  * @caller: name of the executable program, aka the shell.
  * @buffer: the address of the memory allocated by getline.
  * @ret: the last return value before exit was entered.
+ * @com_count: the command number in shell's history
  * Return: 2 if illegal number
  */
 int exit_status(char *path, char **commands, char *caller, char *buffer,
-		int ret)
+		int ret, int com_count)
 {
 	int status = ret;
 
@@ -38,10 +39,14 @@ int exit_status(char *path, char **commands, char *caller, char *buffer,
 		status = _atoi(commands[1]);
 		if (status < 0)
 		{
-			print_string(caller);
-			print_string(": 1: exit: Illegal number: ");
-			print_string(commands[1]);
-			_putchar('\n');
+			perror_string(caller);
+			perror_string(": ");
+			perror_int(com_count);
+			perror_string(": ");
+			perror_string(commands[0]);
+			perror_string(": Illegal number: ");
+			perror_string(commands[1]);
+			perror_string("\n");
 			return (2);
 		}
 	}

@@ -23,7 +23,7 @@ int perror_command(char *caller, char *command, int com_count);
 int perror_file(char *file, char *caller, int com_count);
 int perror_string(char *s);
 int built_ins_abs_paths_check(char *com);
-int exit_status(char *path, char **commands, char *caller, char *buffer, int);
+int exit_status(char *path, char **commands, char *caller, char *, int, int);
 int _atoi(char *s);
 char *_strtok(char *s, const char *delim);
 int colon_check(char *s);

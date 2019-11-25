@@ -37,7 +37,8 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av,
 		ptr_array_print(env);
 		return (0);
 	case 5:
-		return (exit_status(com_path, flags, av[0], buffer, ret));
+		return (exit_status(com_path, flags, av[0], buffer,
+					ret, com_count));
 	}
 	return (1);
 }
