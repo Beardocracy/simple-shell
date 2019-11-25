@@ -25,6 +25,7 @@ Our Simple_Shell is able to
 | free_array | This function frees the string in a pointer array. |
 | get_path |  This function returns the absolute path to a command. |
 | built_ins_abs_paths_check | Checks the initial command. |
+| executer | This function was build to make sure that execve kills any child process. Travis decided to put exit(187) as a safety measure. |
 
 
 ### Error message
@@ -32,8 +33,8 @@ Our Simple_Shell is able to
 |Name  | Description |
 |:----:|:------:|
 | perror_permission | prints the permission denied error message. This is being used in switch cases.|
-| perror_file | prints the no such file or directory error message. |
-| perror_command | prints the command not found error message. |
+| perror_file | prints the no such file or directory error message. used in a switch case |
+| perror_command | prints the command not found error message. used in a switch case |
 
 
 ### Built-ins
@@ -42,6 +43,11 @@ Our Simple_Shell is able to
 |:-----:|:------:|
 | ptr_array_print | This built-in prints an array of strings. the array of string contain the variables. This returns the number of strings printed. |
 | exit_status | exits the program with specific exit statys and frees the allocated memory. |
+
+
+### Switch
+
+
 
 ### Compilation
 
