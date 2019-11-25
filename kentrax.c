@@ -9,6 +9,8 @@
 
 typedef void (*sighandler_t)(int);
 
+sighandler_t ignore;
+
 /**
  * main - a simple shell
  * @ac: the number of arguments
@@ -22,8 +24,8 @@ int main(int ac, char *av[], char *env[])
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, flag, path_value, z;
-	sighandler_t ignore;
+	int i, flag, path_value;
+	(void) ac;
 
 	if (signal(SIGINT, SIG_IGN) != SIG_IGN)
 		signal(SIGINT, ignore);
