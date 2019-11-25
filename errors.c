@@ -8,11 +8,10 @@
  */
 int perror_permission(char *file, char *caller)
 {
-	_putchar('-');
-	print_string(caller);
-	print_string(": ");
-	print_string(file);
-	print_string(": Permission denied\n");
+	perror_string(caller);
+	perror_string(": ");
+	perror_string(file);
+	perror_string(": Permission denied\n");
 
 	return (0);
 }

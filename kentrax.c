@@ -51,7 +51,6 @@ int main(int ac, char *av[], char *env[])
 			free(com_path);
 		}
 	}
-	if (buffer)
-		free(buffer);
+	free(buffer);
 	return (0);
 }
