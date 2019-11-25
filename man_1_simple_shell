@@ -6,24 +6,24 @@ KENTRAX \- Simple-shell project.
 
 .SH DESCRIPTION
 
-KENTRAX is a shell variation that will allow you to do similar \
-function as -BashShell. This shell can work on any operating system or computer.
+KENTRAX is a shell variation that will allow you to do similar function as Bash. 
+This shell can work on any operating system or computer.
 
 .SH SYNOPSIS
 
+[command] [option] [file]
+
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
-.SH SYSTEM CALLS
-
 .SH FUNCTIONS
-del_newline \- Deletes the last newline from the getline functi\
-on.
+del_newline \- Deletes the last newline from the getline function.
 
 _atoi \- Custom built atoi changes a character to an integer.
 
 _strcmp \- Custom built strcmp that compares two strings.
 
-_putchar \- Custom build putchar that allows your to write a single character to an output stream.
+_putchar \- Custom build putchar that allows your to write a single character to 
+	 an output stream.
 
 exit_check \-
 
