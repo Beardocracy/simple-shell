@@ -24,8 +24,9 @@ int ptr_array_print(char **arr)
  * @path: string containing the exit command
  * @commands: array of strings containing the rest of the command line
  * @caller: name of the executable program, aka the shell.
+ * Return: 2 if illegal number
  */
-void exit_status(char *path, char **commands, char *caller)
+int exit_status(char *path, char **commands, char *caller)
 {
 	int status = 0;
 
@@ -38,11 +39,10 @@ void exit_status(char *path, char **commands, char *caller)
 			print_string(": 1: exit: Illegal number: ");
 			print_string(commands[1]);
 			_putchar('\n');
-			return;
+			return (2);
 		}
-		free(commands[0]);
 	}
-	if (path != NULL)
-		free(path);
+	free(path);
+	free(commands[0]);
 	exit(status);
 }

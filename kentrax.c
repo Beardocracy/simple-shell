@@ -23,7 +23,7 @@ int main(int ac, char *av[], char *env[])
 	char *buffer = NULL, *com[32], *com_path = NULL;
 	ssize_t num_read = 1;
 	size_t n = 0;
-	int i, flag, path_value, com_count = 0, ret;
+	int i, flag, path_value, com_count = 0, ret = 0;
 	(void) ac;
 
 	if (signal(SIGINT, SIG_IGN) != SIG_IGN)
@@ -33,9 +33,12 @@ int main(int ac, char *av[], char *env[])
 		if (isatty(STDIN_FILENO))
 			print_prompt();
 		num_read = getline(&buffer, &n, stdin);
-		com_count++;
 		if (num_read == EOF)
-			break;
+		{
+			free(buffer);
+			return (ret);
+		}
+		com_count++;
 		del_newline(buffer);
 		if (buffer[0])
 		{
@@ -52,6 +55,5 @@ int main(int ac, char *av[], char *env[])
 			free(com_path);
 		}
 	}
-	free(buffer);
 	return (ret);
 }

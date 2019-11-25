@@ -113,6 +113,8 @@ char *get_path(char *comm, char **env, int *ret_value)
 			free(cat_temp);
 		}
 	}
+	if (*ret_value == 2)
+		free(paths_in);
 	return (_strdup(comm));
 }
 
