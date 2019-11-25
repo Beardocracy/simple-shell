@@ -36,7 +36,7 @@ Custom built strcmp that compares two strings.
 Custom build putchar that allows your to write a single character to an output stream.
 
 .B comments
-please check readme for the other functions.
+please view readme for the other functions.
 
 .SH COMMENTS
 
