@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * ptr_array_print - prints an array of strings
