@@ -11,9 +11,11 @@
  * @flags: the rest of what was accepted from getline
  * @env: a copy of the environment variables
  * @av: a copy of the argument taken in from the command line at launch
+ * @com_count: the command number in current shell session.
  * Return: 0 if successful
  */
-int switcher(int val, char *com_path, char **flags, char **env, char **av, int com_count)
+int switcher(int val, char *com_path, char **flags, char **env, char **av,
+		int com_count)
 {
 	switch (val)
 	{

@@ -12,6 +12,8 @@ void del_newline(char *s)
 
 	for (i = 0; s[i]; i++)
 	{
+		if (s[i] == '\t')
+			s[i] = ' ';
 		if (s[i] == '\n' && s[i + 1] == '\0')
 			s[i] = '\0';
 	}
