@@ -2,7 +2,9 @@
 .TH KENTRAX "11-19-2019" "V1.0" "KENTRAX man page"
 
 .SH NAME
-KENTRAX \- Simple-shell project.
+
+.B KENTRAX
+Simple_shell project.
 
 .SH DESCRIPTION
 
@@ -19,7 +21,8 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 .SH Copyright
 
-KENTRAX is Copyright 2019 by Holberton School.
+.B KENTRAX
+is Copyright 2019 by Holberton School.
 
 .SH FUNCTIONS
 
