@@ -13,9 +13,12 @@ This shell can work on any operating system or computer.
 
 [command] [option] [file]
 
+.SH COMPLIATION
+
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 .SH FUNCTIONS
+
 del_newline \- Deletes the last newline from the getline function.
 
 _atoi \- Custom built atoi changes a character to an integer.
@@ -26,6 +29,9 @@ _putchar \- Custom build putchar that allows your to write a single character to
 	 an output stream.
 
 exit_check \-
+
+.SH COMMENTS
+
 
 .SH AUTHORS
 Travis Bearden and Kenneth Fernandez.
