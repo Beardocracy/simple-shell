@@ -27,9 +27,10 @@ int ptr_array_print(char **arr)
  * @buffer: the address of the memory allocated by getline.
  * Return: 2 if illegal number
  */
-int exit_status(char *path, char **commands, char *caller, char *buffer)
+int exit_status(char *path, char **commands, char *caller, char *buffer,
+		int ret)
 {
-	int status = 0;
+	int status = ret;
 
 	if (commands[1] != NULL)
 	{
