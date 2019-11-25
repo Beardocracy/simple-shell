@@ -8,7 +8,7 @@
  */
 void del_newline(char *s)
 {
-	int i;
+	int i, nonspace = 0;
 
 	for (i = 0; s[i]; i++)
 	{
@@ -17,6 +17,13 @@ void del_newline(char *s)
 		if (s[i] == '\n' && s[i + 1] == '\0')
 			s[i] = '\0';
 	}
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] != ' ')
+			nonspace++;
+	}
+	if (nonspace == 0)
+		s[0] = '\0';
 }
 
 /**
