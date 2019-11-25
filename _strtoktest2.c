@@ -9,7 +9,7 @@ char *_strtok(char *strInput, const char *strDelim)
 
         if( !strDelim)
         {
-                return (NULL);
+                return (strInput);
         }
 
         if( !strStatic )
