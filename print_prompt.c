@@ -16,7 +16,7 @@ int _putchar(char c)
  */
 void print_prompt(void)
 {
-	char prompt[12] = "KENTRAX $ ";
+	char prompt[12] = "KENTRAX$ ";
 	int i;
 
 	for (i = 0; prompt[i]; i++)
