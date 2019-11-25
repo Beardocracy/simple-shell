@@ -35,6 +35,16 @@ Custom built strcmp that compares two strings.
 .B _putchar
 Custom build putchar that allows your to write a single character to an output stream.
 
+.SH COMMANDS
+
+.B ls
+list directory contents.
+
+.SH OPTIONS
+
+.B -l
+which creates the long list with showing the read write executable permissions for each file when paired with ls.
+
 .B comments
 please view readme for the other functions.
 
