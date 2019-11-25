@@ -12,10 +12,11 @@
  * @env: a copy of the environment variables
  * @av: a copy of the argument taken in from the command line at launch
  * @com_count: the command number in current shell session.
+ * @buffer: the address of the memory allocated by getline.
  * Return: 0 if successful
  */
 int switcher(int val, char *com_path, char **flags, char **env, char **av,
-		int com_count)
+		int com_count, char *buffer)
 {
 	switch (val)
 	{
@@ -35,7 +36,7 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av,
 		ptr_array_print(env);
 		return (0);
 	case 5:
-		return (exit_status(com_path, flags, av[0]));
+		return (exit_status(com_path, flags, av[0], buffer));
 	}
 	return (1);
 }

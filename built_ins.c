@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * ptr_array_print - prints an array of strings
@@ -24,9 +25,10 @@ int ptr_array_print(char **arr)
  * @path: string containing the exit command
  * @commands: array of strings containing the rest of the command line
  * @caller: name of the executable program, aka the shell.
+ * @buffer: the address of the memory allocated by getline.
  * Return: 2 if illegal number
  */
-int exit_status(char *path, char **commands, char *caller)
+int exit_status(char *path, char **commands, char *caller, char *buffer)
 {
 	int status = 0;
 
@@ -43,6 +45,6 @@ int exit_status(char *path, char **commands, char *caller)
 		}
 	}
 	free(path);
-	free(commands[0]);
+	free(buffer);
 	exit(status);
 }
