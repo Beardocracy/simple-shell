@@ -20,9 +20,8 @@ sighandler_t ignore;
  */
 int main(int ac, char *av[], char *env[])
 {
-	char *buffer, *com[32], *com_path;
-	char delim = ' ';
-	ssize_t num_read;
+	char *buffer = NULL, *com[32], *com_path = NULL;
+	ssize_t num_read = 1;
 	size_t n = 0;
 	int i, flag, path_value, com_count = 0, ret;
 	(void) ac;
@@ -40,10 +39,10 @@ int main(int ac, char *av[], char *env[])
 		del_newline(buffer);
 		if (buffer[0])
 		{
-			com[0] = _strtok(buffer, &delim);
+			com[0] = _strtok(buffer, " ");
 			for (i = 1, flag = 1; flag; i++)
 			{
-				com[i] = _strtok(NULL, &delim);
+				com[i] = _strtok(NULL, " ");
 				if (com[i] == NULL)
 					flag = 0;
 			}

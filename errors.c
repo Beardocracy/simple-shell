@@ -53,7 +53,7 @@ int perror_command(char *caller, char *command, int com_count)
 	perror_int(com_count);
 	perror_string(": ");
 	perror_string(command);
-	perror_string(": No such file or directory\n");
+	perror_string(": not found\n");
 
 	return (127);
 }

@@ -29,9 +29,7 @@ char *_strdup(char *s)
 	int i = 0;
 	char *dup;
 
-	while (s[i] != '\0')
-		i++;
-	dup = malloc(sizeof(char) * i);
+	dup = malloc(sizeof(char) * (_strlen(s) + 1));
 	if (dup == NULL)
 		return (NULL);
 	for (i = 0; s[i]; i++)
