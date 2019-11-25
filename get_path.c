@@ -147,16 +147,10 @@ int built_ins_abs_paths_check(char *com)
 			return (4);
 		if (_strcmp("exit", com))
 			return (5);
-		if (_strcmp("cd", com))
+		if (_strcmp("echo", com))
 			return (6);
-		if (_strcmp("setenv", com))
-			return (7);
-		if (_strcmp("unsetenv", com))
-			return (8);
-		if (_strcmp("history", com))
-			return (9);
 		if (_strcmp("daddy?", com))
-			return (10);
+			return (7);
 
 
 	}

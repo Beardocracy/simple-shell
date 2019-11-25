@@ -54,3 +54,40 @@ int exit_status(char *path, char **commands, char *caller, char *buffer,
 	free(buffer);
 	exit(status);
 }
+
+/**
+ * echo_check - checks to see if user entered echo $? or $$.
+ * @ret: the previous return value.
+ * @command: the command from getline.
+ * @flags: the array of commands from getline.
+ * Return: 0 if successful.
+ */
+int echo_check(int ret, char *command, char **flags)
+{
+	if (_strcmp(flags[1], "$?"))
+	{
+		print_int(ret);
+		_putchar('\n');
+	}
+	else if (_strcmp(flags[1], "$$"))
+	{
+		print_int(getpid());
+		_putchar('\n');
+	}
+	else
+		return (executer(command, flags));
+	return (0);
+}
+
+/**
+ * daddy - tells the user who their daddy is.
+ * @av: the outside arguments coming in
+ * Return: 0.
+ */
+int daddy(char **av)
+{
+	print_string(av[0]);
+	print_string(" ==> ");
+	print_string("TRAVIS IS YOUR DADDY\n");
+	return (0);
+}

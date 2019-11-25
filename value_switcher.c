@@ -31,16 +31,19 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av,
 		perror_command(av[0], com_path, com_count);
 		return (127);
 	case 3:
-		executer(com_path, flags);
-		return (0);
+		return (executer(com_path, flags));
 	case 4:
 		ptr_array_print(env);
 		return (0);
 	case 5:
 		return (exit_status(com_path, flags, av[0], buffer,
 					ret, com_count));
+	case 6:
+		return (echo_check(ret, com_path, flags));
+	case 7:
+		return (daddy(av));
 	}
-	return (1);
+	return (0);
 }
 /**
  * executer - forks current process to run execve

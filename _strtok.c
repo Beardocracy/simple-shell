@@ -57,8 +57,19 @@ int perror_int(int n)
 	return (0);
 }
 
+/**
+ * print_int - prints an integer to std out.
+ * @n: the integer to be printed.
+ * Return: 0 if successful.
+ */
+int print_int(int n)
+{
+	char num;
 
+	if (n / 10 > 0)
+		print_int(n / 10);
+	num = n % 10 + '0';
+	write(STDOUT_FILENO, &num, 1);
 
-
-
-
+	return (0);
+}
