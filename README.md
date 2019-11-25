@@ -4,6 +4,9 @@ Our Simple_Shell is an awesome entry way into the world of computers. This shell
 
 ## Getting Started
 
+### Prerequistes
+
+The prerequisites to create this shell project would either be 1 year of college/High School C programing course or three months at Holberton School.
 
 ### Functions
 
@@ -15,8 +18,8 @@ Our Simple_Shell is an awesome entry way into the world of computers. This shell
 | free | This function frees up the memory that was allocated for the string, array or integer, etc. |
 | wait | |
 | execve | |
-| del_newline | this function overwrites a newline character before the null character in a string. This function is being used with get_line |
-| _strdup | copies and allocates memory for a sting. returns a pointer to malloc'd space containing the copy of the string. |
+| del_newline | This function overwrites a newline character before the null character in a string. This is being used with get_line |
+| _strdup | Copies and allocates memory for a sting. returns a pointer to malloc'd space containing the copy of the string. |
 | _strcmp | Custom built function that compares two strings. |
 | _strlen | Custom built function that returns the length of a string |
 | path_combo | This function combines two strings with a / symbol in between them. After, they have been combined and malloced, it is returns a pointer.|
@@ -29,7 +32,7 @@ Our Simple_Shell is an awesome entry way into the world of computers. This shell
 | _putchar | This function allows you to print a character to standard out(stdout). |
 | print_prompt | This function prints the command line prompt. |
 | print_string | This lets you print a string ended with a null terminator. |
-| _atoi | this function helps convert a string to an integer. |
+| _atoi | This function helps convert a string to an integer. |
 
 
 ### Error message
@@ -49,9 +52,16 @@ Our Simple_Shell is an awesome entry way into the world of computers. This shell
 | exit_status | exits the program with specific exit statys and frees the allocated memory. |
 
 
-### Switch
+### Switch cases
 
-
+|Name | output|
+|:-----:|:------:|
+| case 0 | perror_command(av[0], com_path); |
+| case 1 | perror_permission(com_path, av[0]); |
+| case 2 | perror_command(av[0], com_path); |
+| case 3 | executer(com_path, flags); |
+| case 4 | ptr_array_print(env); |
+| case 5 | exit_status(com_path, flags, av[0]); |
 
 ### Compilation
 
