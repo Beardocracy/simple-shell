@@ -36,6 +36,7 @@ int main(int ac, char *av[], char *env[])
 		if (num_read == EOF)
 		{
 			free(buffer);
+			_putchar('\n');
 			return (ret);
 		}
 		com_count++;

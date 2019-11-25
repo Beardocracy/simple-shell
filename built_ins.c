@@ -25,6 +25,7 @@ int ptr_array_print(char **arr)
  * @commands: array of strings containing the rest of the command line
  * @caller: name of the executable program, aka the shell.
  * @buffer: the address of the memory allocated by getline.
+ * @ret: the last return value before exit was entered.
  * Return: 2 if illegal number
  */
 int exit_status(char *path, char **commands, char *caller, char *buffer,
