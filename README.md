@@ -83,3 +83,6 @@ hsh main.c shell.c
 $
 ```
 ## Contributing
+
+## Authors
+Travis Bearden and Kenneth Fernandez.
