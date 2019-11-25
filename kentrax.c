@@ -29,12 +29,12 @@ int main(int ac, char *av[], char *env[])
 
 	if (signal(SIGINT, SIG_IGN) != SIG_IGN)
 		signal(SIGINT, ignore);
-	while (num_read != -1)
+	while (num_read != EOF)
 	{
 		if (isatty(STDIN_FILENO))
 			print_prompt();
 		num_read = getline(&buffer, &n, stdin);
-		if (num_read == -1)
+		if (num_read == EOF)
 			break;
 		del_newline(buffer);
 		if (buffer[0])
