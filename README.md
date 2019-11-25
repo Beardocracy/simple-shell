@@ -7,7 +7,7 @@ Our Simple_Shell is able to
 
 ### Functions
 
-| Type  | Description |
+| Name  | Description |
 |:-----:|:------:|
 | _strtok() | This function takes a string and seperates it into tokens by putting a null terminator where the specified delimiter is located. |
 | _getenv | |
@@ -27,13 +27,18 @@ Our Simple_Shell is able to
 | built_ins_abs_paths_check | Checks the initial command. |
 
 
-```
-Give examples
-```
+### Error message
+
+|Name  | Description |
+|:----:|:------:|
+| perror_permission | prints the permission denied error message. This is being used in switch cases.|
+| perror_file | prints the no such file or directory error message. |
+| perror_command | prints the command not found error message. |
+
 
 ### Built-ins
 
-| Type  | Description |
+| Name  | Description |
 |:-----:|:------:|
 | ptr_array_print | This built-in prints an array of strings. the array of string contain the variables. This returns the number of strings printed. |
 | exit_status | exits the program with specific exit statys and frees the allocated memory. |
