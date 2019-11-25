@@ -16,7 +16,7 @@ int perror_permission(char *file, char *caller, int com_count)
 	perror_string(file);
 	perror_string(": Permission denied\n");
 
-	return (0);
+	return (126);
 }
 
 /**
@@ -34,7 +34,7 @@ int perror_file(char *file, char *caller, int com_count)
 	perror_string(": ");
 	perror_string(file);
 	perror_string(": not found\n");
-	return (0);
+	return (127);
 }
 
 /**
@@ -55,5 +55,5 @@ int perror_command(char *caller, char *command, int com_count)
 	perror_string(command);
 	perror_string(": No such file or directory\n");
 
-	return (0);
+	return (127);
 }

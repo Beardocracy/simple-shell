@@ -24,7 +24,7 @@ int main(int ac, char *av[], char *env[])
 	char delim = ' ';
 	ssize_t num_read;
 	size_t n = 0;
-	int i, flag, path_value, com_count = 0;
+	int i, flag, path_value, com_count = 0, ret;
 	(void) ac;
 
 	if (signal(SIGINT, SIG_IGN) != SIG_IGN)
@@ -48,11 +48,11 @@ int main(int ac, char *av[], char *env[])
 					flag = 0;
 			}
 			com_path = get_path(com[0], env, &path_value);
-			switcher(path_value, com_path, com, env, av, com_count);
+			ret = switcher(path_value, com_path, com,
+					env, av, com_count);
 			free(com_path);
-			free(buffer);
 		}
 	}
 	free(buffer);
-	return (0);
+	return (ret);
 }

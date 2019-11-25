@@ -21,13 +21,13 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av,
 	{
 	case 0:
 		perror_command(av[0], com_path, com_count);
-		return (0);
+		return (127);
 	case 1:
 		perror_permission(com_path, av[0], com_count);
-		return (0);
+		return (126);
 	case 2:
 		perror_command(av[0], com_path, com_count);
-		return (0);
+		return (127);
 	case 3:
 		executer(com_path, flags);
 		return (0);
