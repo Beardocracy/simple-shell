@@ -92,7 +92,8 @@ int echo_check(int ret, char *command, char **flags, char **env)
 			print_string(flags[i]);
 			_putchar(' ');
 		}
-		_putchar('\n');
+		if (flags[1] != NULL)
+			_putchar('\n');
 	}
 	return (0);
 }
