@@ -31,19 +31,19 @@ char *path_combo(char *dir, char *comm)
 /**
  * env_path_parse - parses the path line from the environment variables.
  * @env: the array of strings with all environment variables.
- * Return: a mallocd string containing the environment variable line.
+ * @var: the name of the variable to return
+ * Return: a mallocd string containing the environment variable line. Or null.
  */
-char *env_path_parse(char **env)
+char *env_path_parse(char **env, char *var)
 {
 	int i, j, flag;
-	char path[6] = "PATH=";
-	char *path_line;
+	char *path_line = NULL;
 
 	for (i = 0; env[i]; i++)
 	{
-		for (j = 0, flag = 1; flag && j < 5; j++)
+		for (j = 0, flag = 1; flag && j < _strlen(var); j++)
 		{
-			if (env[i][j] != path[j])
+			if (env[i][j] != var[j])
 				flag = 0;
 		}
 		if (flag)
@@ -56,7 +56,7 @@ char *env_path_parse(char **env)
 				return (NULL);
 			}
 			for (j = 0; env[i][j]; j++)
-				path_line[j] = env[i][j + 5];
+				path_line[j] = env[i][j + _strlen(var)];
 			path_line[j] = '\0';
 		}
 	}
@@ -82,7 +82,7 @@ char *get_path(char *comm, char **env, int *ret_value)
 	*ret_value = built_ins_abs_paths_check(comm);
 	if (*ret_value == 2)
 	{
-		paths_in = env_path_parse(env);
+		paths_in = env_path_parse(env, "PATH=");
 		cur_dir_index = colon_check(paths_in);
 		if (cur_dir_index > -1)
 			pathlist[cur_dir_index] = "./";
