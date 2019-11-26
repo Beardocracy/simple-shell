@@ -60,11 +60,12 @@ int exit_status(char *path, char **commands, char *caller, char *buffer,
  * @ret: the previous return value.
  * @command: the command from getline.
  * @flags: the array of commands from getline.
+ * @env: the environment variables array
  * Return: 0 if successful.
  */
 int echo_check(int ret, char *command, char **flags, char **env)
 {
-	char *temp = NULL;
+	char *temp = NULL, *var = NULL;
 	int i;
 	(void) command;
 
@@ -78,10 +79,11 @@ int echo_check(int ret, char *command, char **flags, char **env)
 		print_int(getpid());
 		_putchar('\n');
 	}
-	else if (_strcmp(flags[1], "$PATH"))
+	else if (flags[1][0] == '$')
 	{
-		temp = env_path_parse(env);
-		print_string(temp);
+		var = var_parse(flags[1]);
+		print_string(var);
+		temp = env_path_parse(env, var);
 		_putchar('\n');
 		free(temp);
 	}

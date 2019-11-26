@@ -85,3 +85,24 @@ int _strlen(char *s)
 		;
 	return (i);
 }
+
+/**
+ * var_parse - parses a "$var" into "var="
+ * @var: the string to be parsed.
+ * Return: malloc'd string. Caller must free.
+ */
+char *var_parse(char *var)
+{
+	int i, j;
+	char *parsed_str;
+
+	parsed_str = malloc(sizeof(char) * (_strlen(var)));
+	for (i = 1, j = 0; var[i]; i++, j++)
+	{
+		parsed_str[j] = var[i];
+	}
+	parsed_str[j] = '=';
+	parsed_str[j + 1] = '\0';
+
+	return (parsed_str);
+}

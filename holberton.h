@@ -5,7 +5,7 @@
 
 void del_newline(char *s);
 char *get_path(char *comm, char **env, int *ret_value);
-char *env_path_parse(char **env);
+char *env_path_parse(char **env, char *var);
 int _strlen(char *s);
 char *path_combo(char *dir, char *comm);
 void print_prompt(void);
@@ -31,5 +31,6 @@ int perror_int(int n);
 int print_int(int n);
 int echo_check(int ret, char *command, char **flags, char **env);
 int daddy(char **av);
+char *var_parse(char *var);
 
 #endif
