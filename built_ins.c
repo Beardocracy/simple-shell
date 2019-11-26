@@ -79,13 +79,14 @@ int echo_check(int ret, char *command, char **flags, char **env)
 		print_int(getpid());
 		_putchar('\n');
 	}
-	else if (flags[1][0] == '$')
+	else if (flags[1] != NULL && flags[1][0] == '$')
 	{
 		var = var_parse(flags[1]);
 		temp = env_path_parse(env, var);
 		if (temp != NULL)
 			print_string(temp);
 		_putchar('\n');
+		free(var);
 		free(temp);
 	}
 	else
