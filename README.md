@@ -10,14 +10,13 @@ The prerequisites to create this shell project would either be 1 year of college
 
 ### Functions
 
-| Name  | Description |
+| Name | Description |
 |:-----:|:------:|
 | _strtok() | This function takes a string and seperates it into tokens by putting a null terminator where the specified delimiter is located. |
 | _getenv | |
-| access |  |
+| access | It is used to check if the users have permissions for the file. checks whether the calling process can access the file pathname. If pathname is a symbolic link, it is dereferenced. |
 | free | This function frees up the memory that was allocated for the string, array or integer, etc. |
 | wait | |
-| execve | |
 | del_newline | This function overwrites a newline character before the null character in a string. This is being used with get_line |
 | _strdup | Copies and allocates memory for a sting. returns a pointer to malloc'd space containing the copy of the string. |
 | _strcmp | Custom built function that compares two strings. |
@@ -38,19 +37,27 @@ The prerequisites to create this shell project would either be 1 year of college
 
 ### Error message
 
-|Name  | Description |
+| Name | Description |
 |:----:|:------:|
 | perror_permission | prints the permission denied error message. This is being used in switch cases.|
-| perror_file | prints the no such file or directory error message. used in a switch case |
-| perror_command | prints the command not found error message. used in a switch case |
+| perror_file | prints the no such file or directory error message. used in a switch case. |
+| perror_command | prints the command not found error message. used in a switch case. |
+| perror_string | prints a string to the standard error. |
 
 
 ### Built-ins
 
-| Name  | Description |
+| Name | Description |
 |:-----:|:------:|
 | ptr_array_print | This built-in prints an array of strings. the array of string contain the variables. This returns the number of strings printed. |
 | exit_status | exits the program with specific exit statys and frees the allocated memory. |
+
+### System call
+
+| Name | Description |
+|:-----:|:------:|
+| execve | executes a program referered to by pathname. it is used to kill process. |
+| fork | it is an operation where a process clones itself. |
 
 
 ### Switch cases
