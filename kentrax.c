@@ -30,7 +30,7 @@ int main(int ac, char *av[], char *env[])
 		signal(SIGINT, ignore);
 	while (num_read != EOF && file_in_flag)
 	{
-		if (isatty(STDIN_FILENO))
+		if (isatty(STDIN_FILENO) && av[1] == NULL)
 			print_prompt();
 		if (av[1] != NULL)
 		{
