@@ -84,7 +84,7 @@ int echo_check(int ret, char *command, char **flags, char **env)
 		print_string(temp);
 		_putchar('\n');
 		free(temp);
-	}	
+	}
 	else
 	{
 		for (i = 1; flags[i] != NULL; i++)
