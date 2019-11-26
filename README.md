@@ -35,74 +35,64 @@ college/High School C programing course or three months at Holberton School.
 | _atoi | This function helps convert a string to an integer. |
 | colon_check | checks a string for leading, appending, or back to back colons. Return -1 if no leading, ending, or double colons are present. Otherwise, it returns the corresponding index where the colon appears. |
 
-
 ### Error message
 
-	| Name | Description |
-	|:----:|:------:|
-	| perror_permission | prints the permission denied error message. This is being used in switch cases.|
-	| perror_file | prints the no such file or directory error message. used in a switch case. |
-	| perror_command | prints the command not found error message. used in a switch case. |
-	| perror_string | prints a string to the standard error. |
-
+| Name | Description |
+|:----:|:------:|
+| perror_permission | prints the permission denied error message. This is being used in switch cases.|
+| perror_file | prints the no such file or directory error message. used in a switch case. |
+| perror_command | prints the command not found error message. used in a switch case. |
+| perror_string | prints a string to the standard error. |
 
 ### Built-ins
 
-
-	| Name | Description |
-	|:-----:|:------:|
-	| ptr_array_print | This built-in prints an array of strings. the array	of string contain the variables. This returns the number of strings printed. |
-	| exit_status | Exits the program with specific exit statys and frees the allocated memory. |
-
+| Name | Description |
+|:-----:|:------:|
+| ptr_array_print | This built-in prints an array of strings. the array	of string contain the variables. This returns the number of strings printed. |
+| exit_status | Exits the program with specific exit statys and frees the allocated memory. |
 
 ### System call
 
-
-	| Name | Description |
-	|:-----:|:------:|
-	| execve | Executes a program referered to by pathname. it is used to kill process. |
-	| fork | It is an operation where a process id is cloned. |
-	| Wait | This system call wait for a process to change status. When a process is forked, it will create a clone or a child process id. if wait is in the original(parent process id), it will wait for the child process id is completed/killed before it continues on. |
-
+| Name | Description |
+|:-----:|:------:|
+| execve | Executes a program referered to by pathname. it is used to kill process. |
+| fork | It is an operation where a process id is cloned. |
+| Wait | This system call wait for a process to change status. When a process is forked, it will create a clone or a child process id. if wait is in the original(parent process id), it will wait for the child process id is completed/killed before it continues on. |
 
 ### Switch cases
 
-
-	|Name | Output|
-	|:-----:|:------:|
-	| case 0 | perror_command(av[0], com_path); |
-	| case 1 | perror_permission(com_path, av[0]); |
-	| case 2 | perror_command(av[0], com_path); |
-	| case 3 | executer(com_path, flags); |
-	| case 4 | ptr_array_print(env); |
-	| case 5 | exit_status(com_path, flags, av[0]); |
-
+|Name | Output|
+|:-----:|:------:|
+| case 0 | perror_command(av[0], com_path); |
+| case 1 | perror_permission(com_path, av[0]); |
+| case 2 | perror_command(av[0], com_path); |
+| case 3 | executer(com_path, flags); |
+| case 4 | ptr_array_print(env); |
+| case 5 | exit_status(com_path, flags, av[0]); |
 
 ### Compilation
 
-
-	With the command below, this will be used to compile our shell
-	```
-	gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
-	```
+With the command below, this will be used to compile our shell
+```
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
 
 ## Running the tests
 
-	```
-	$ ./hsh
-	($) /bin/ls
-	hsh main.c shell.c
-	($)
-	($) exit
-	$
-	```
+```
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+```
 
 ## Flowchart
 
-	![alt
-	text](https://github.com/Beardocracy/simple_shell/blob/Kendawg/Programming%20Flowchart.png)
+![alt text](https://github.com/Beardocracy/simple_shell/blob/Kendawg/Programming%20Flowchart.png)
 
 ## Contributing
 
 ### Authors
-	Travis Bearden and Kenneth Fernandez.
+Travis Bearden and Kenneth Fernandez.
