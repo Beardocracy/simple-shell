@@ -1,1 +1,127 @@
-Man page will be here.
+./"This is the manpage of the KENTRAX Shell
+
+.TH KENTRAX "11-19-2019" "V1.0" "KENTRAX man page"
+
+
+
+.SH NAME
+
+
+
+.B KENTRAX
+
+Simple_shell project.
+
+
+
+.SH DESCRIPTION
+
+
+
+.B KENTRAX
+
+is a shell variation that will allow you to do similar function as Bash. This shell can work on any operating system or computer.this is the base of the simple shell program. It is made up of a few functions and built-ins. Signal is to block our control c (advance problem). del_newline is to delete the newline that is given by the getline. _strtok is being used to dissect the path from the environment to call different commands.
+
+
+
+.SH SYNOPSIS
+
+
+
+[command] [option] [file]
+
+
+
+.SH COMPLIATION
+
+
+
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+
+
+.SH Copyright
+
+
+
+.B KENTRAX
+
+is Copyright 2019 by Holberton School.
+
+
+
+.SH FUNCTIONS
+
+
+
+.B del_newline
+
+ Deletes the last newline from the getline function.
+
+
+
+.B _atoi
+
+Custom built atoi changes a character to an integer.
+
+
+
+.B _strcmp
+
+Custom built strcmp that compares two strings.
+
+
+
+.B _putchar
+
+Custom build putchar that allows your to write a single character to an output stream.
+
+
+
+.SH COMMANDS
+
+
+
+.B ls
+
+list directory contents.
+
+
+
+.B echo
+
+it prints contents of an option.
+
+
+
+.SH OPTIONS
+
+
+
+.B -l
+
+which creates the long list with showing the read write executable permissions for each file when paired with ls.
+
+
+
+.B $?
+
+returns the last successful command. it returns 0, it means yes. use this with the echo command.
+
+
+
+.B $$
+
+this returns the parent process ID number. use this with echo command.
+
+
+
+.SH COMMENTS
+
+please view readme for the other functions.
+
+
+
+.SH AUTHORS
+
+Travis Bearden and Kenneth Fernandez.
