@@ -90,7 +90,11 @@ hsh main.c shell.c
 ($) exit
 $
 ```
-# Contributing
+## Flowchart
 
-## Authors
+![alt text](https://github.com/Beardocracy/simple_shell/blob/Kendawg/Programming%20Flowchart.png)
+
+## Contributing
+
+### Authors
 Travis Bearden and Kenneth Fernandez.
