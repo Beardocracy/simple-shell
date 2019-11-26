@@ -10,6 +10,8 @@ void del_newline(char *s)
 {
 	int i, nonspace = 0;
 
+	if (s[0] == '#')
+		s[0] = '\0';
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] == '\t')
