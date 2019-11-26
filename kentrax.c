@@ -59,6 +59,8 @@ int main(int ac, char *av[], char *env[])
 			ret = switcher(path_value, com_path, com,
 					env, av, com_count, buffer, ret);
 			free(com_path);
+			if (av[1] != NULL)
+				free(buffer);
 		}
 	}
 	return (ret);
