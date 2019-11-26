@@ -16,7 +16,6 @@ The prerequisites to create this shell project would either be 1 year of college
 | _getenv | |
 | access | It is used to check if the users have permissions for the file. checks whether the calling process can access the file pathname. If pathname is a symbolic link, it is dereferenced. |
 | free | This function frees up the memory that was allocated for the string, array or integer, etc. |
-| wait | |
 | del_newline | This function overwrites a newline character before the null character in a string. This is being used with get_line |
 | _strdup | Copies and allocates memory for a sting. returns a pointer to malloc'd space containing the copy of the string. |
 | _strcmp | Custom built function that compares two strings. |
@@ -50,15 +49,15 @@ The prerequisites to create this shell project would either be 1 year of college
 | Name | Description |
 |:-----:|:------:|
 | ptr_array_print | This built-in prints an array of strings. the array of string contain the variables. This returns the number of strings printed. |
-| exit_status | exits the program with specific exit statys and frees the allocated memory. |
+| exit_status | Exits the program with specific exit statys and frees the allocated memory. |
 
 ### System call
 
 | Name | Description |
 |:-----:|:------:|
-| execve | executes a program referered to by pathname. it is used to kill process. |
-| fork | it is an operation where a process clones itself. |
-
+| execve | Executes a program referered to by pathname. it is used to kill process. |
+| fork | It is an operation where a process id is cloned. |
+| Wait | This system call wait for a process to change status. When a process is forked, it will create a clone or a child process id. if wait is in the original(parent process id), it will wait for the child process id is completed/killed before it continues on. |
 
 ### Switch cases
 
