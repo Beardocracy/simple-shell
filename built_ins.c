@@ -62,8 +62,9 @@ int exit_status(char *path, char **commands, char *caller, char *buffer,
  * @flags: the array of commands from getline.
  * Return: 0 if successful.
  */
-int echo_check(int ret, char *command, char **flags)
+int echo_check(int ret, char *command, char **flags, char **env)
 {
+	char *temp = NULL;
 	int i;
 	(void) command;
 
@@ -77,6 +78,13 @@ int echo_check(int ret, char *command, char **flags)
 		print_int(getpid());
 		_putchar('\n');
 	}
+	else if (_strcmp(flags[1], "$PATH"))
+	{
+		temp = env_path_parse(env);
+		print_string(temp);
+		_putchar('\n');
+		free(temp);
+	}	
 	else
 	{
 		for (i = 1; flags[i] != NULL; i++)

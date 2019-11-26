@@ -39,7 +39,7 @@ int switcher(int val, char *com_path, char **flags, char **env, char **av,
 		return (exit_status(com_path, flags, av[0], buffer,
 					ret, com_count));
 	case 6:
-		return (echo_check(ret, com_path, flags));
+		return (echo_check(ret, com_path, flags, env));
 	case 7:
 		return (daddy(av));
 	}

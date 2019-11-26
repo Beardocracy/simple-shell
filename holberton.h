@@ -29,7 +29,7 @@ char *_strtok(char *s, const char *delim);
 int colon_check(char *s);
 int perror_int(int n);
 int print_int(int n);
-int echo_check(int ret, char *command, char **flags);
+int echo_check(int ret, char *command, char **flags, char **env);
 int daddy(char **av);
 
 #endif
