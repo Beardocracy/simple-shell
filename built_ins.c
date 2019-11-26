@@ -64,6 +64,9 @@ int exit_status(char *path, char **commands, char *caller, char *buffer,
  */
 int echo_check(int ret, char *command, char **flags)
 {
+	int i;
+	(void) command;
+
 	if (_strcmp(flags[1], "$?"))
 	{
 		print_int(ret);
@@ -75,7 +78,14 @@ int echo_check(int ret, char *command, char **flags)
 		_putchar('\n');
 	}
 	else
-		return (executer(command, flags));
+	{
+		for (i = 1; flags[i] != NULL; i++)
+		{
+			print_string(flags[i]);
+			_putchar(' ');
+		}
+		_putchar('\n');
+	}
 	return (0);
 }
 
