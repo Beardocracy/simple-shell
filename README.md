@@ -33,6 +33,7 @@ The prerequisites to create this shell project would either be 1 year of college
 | print_prompt | This function prints the command line prompt. |
 | print_string | This lets you print a string ended with a null terminator. |
 | _atoi | This function helps convert a string to an integer. |
+| colon_check | checks a string for leading, appending, or back to back colons. Return -1 if no leading, ending, or double colons are present. Otherwise, it returns the corresponding index where the colon appears. |
 
 
 ### Error message
@@ -82,7 +83,7 @@ hsh main.c shell.c
 ($) exit
 $
 ```
-## Contributing
+# Contributing
 
 ## Authors
 Travis Bearden and Kenneth Fernandez.
