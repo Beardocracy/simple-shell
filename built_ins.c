@@ -82,8 +82,9 @@ int echo_check(int ret, char *command, char **flags, char **env)
 	else if (flags[1][0] == '$')
 	{
 		var = var_parse(flags[1]);
-		print_string(var);
 		temp = env_path_parse(env, var);
+		if (temp != NULL)
+			print_string(temp);
 		_putchar('\n');
 		free(temp);
 	}

@@ -97,6 +97,8 @@ char *var_parse(char *var)
 	char *parsed_str;
 
 	parsed_str = malloc(sizeof(char) * (_strlen(var)));
+	if (parsed_str == NULL)
+		return (NULL);
 	for (i = 1, j = 0; var[i]; i++, j++)
 	{
 		parsed_str[j] = var[i];
